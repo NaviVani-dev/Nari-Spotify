@@ -6,6 +6,7 @@
 	"description": "Spotify integration inside Nari! Enjoy your whole library with every feature Nari offers.",
 	"icon": "icon.jpg",
 	"api": 1,
+	"permissions": ["network"],
 	"screenshots": [
 		"preview/1.png"
 	]

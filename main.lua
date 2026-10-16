@@ -124,7 +124,11 @@ local function build(library)
 	for _, item in ipairs(library.albums) do
 		add(item.artist_id, item.artists[1], "album_count", item.id)
 	end
-	table.sort(artists, function(first, second) return first.name:lower() < second.name:lower() end)
+	local names = {}
+	for _, artist in ipairs(artists) do
+		names[artist] = artist.name:lower()
+	end
+	table.sort(artists, function(first, second) return names[first] < names[second] end)
 	library.artists = artists
 	library.covers = index.covers
 	library.version = 2
